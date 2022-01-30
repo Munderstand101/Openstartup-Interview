@@ -37,7 +37,7 @@ symfony server:stop
 
 ## Les Bundles :
 Pour ce projet, j'ai utilisé les bundles suivants :
-- [Fixtures](https://symfony.com/bundles/DoctrineFixturesBundle/current/index.html ) (pour les fixtures) : `composer require --dev orm-fixtures`
+- [DoctrineFixturesBundle](https://symfony.com/bundles/DoctrineFixturesBundle/current/index.html ) (pour les fixtures) : `composer require --dev orm-fixtures`
 - [KnpPaginatorBundle](https://github.com/KnpLabs/KnpPaginatorBundle) (pour la pagination) : `composer require knplabs/knp-paginator-bundle`
 - [KnpTimeBundle](https://github.com/KnpLabs/KnpTimeBundle) (pour le texte "il y a 3 minutes") : `composer require knplabs/knp-time-bundle`
 - [KnpMarkdownBundle](https://github.com/KnpLabs/KnpMarkdownBundle) (pour les markdown) : `composer require knplabs/knp-markdown-bundle`
