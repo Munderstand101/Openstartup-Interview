@@ -35,7 +35,7 @@ symfony server:stop
 
 ```
 
-## Les Bundles :
+## Les Bundles utilisées :
 Pour ce projet, j'ai utilisé les bundles suivants :
 - [DoctrineFixturesBundle](https://symfony.com/bundles/DoctrineFixturesBundle/current/index.html ) (pour les fixtures) : `composer require --dev orm-fixtures`
 - [KnpPaginatorBundle](https://github.com/KnpLabs/KnpPaginatorBundle) (pour la pagination) : `composer require knplabs/knp-paginator-bundle`
