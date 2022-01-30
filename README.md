@@ -39,7 +39,7 @@ symfony server:stop
 Modifier la configuration du fichier `.env.local`, ce fichier contient la configuration du projet :
 ```bash
 # Configurer l'accès à la base de données
-DATABASE_URL="mysql://root:@localhost:3306/dbname_dev?serverVersion=5.7"
+# DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name?serverVersion=5.7",
 ```
 
 ## Les Bundles utilisées :
