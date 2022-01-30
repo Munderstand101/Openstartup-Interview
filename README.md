@@ -37,10 +37,9 @@ symfony server:stop
 
 ## Les Bundles :
 Pour ce projet, j'ai utilisé les bundles suivants :
-- [Fixtures](https://symfony.com/bundles/DoctrineFixturesBundle/current/index.html) : `composer require --dev orm-fixtures`
-- 
-- KnpPaginatorBundle for the pagination
-- KnpTimeBundle for the "3 minutes ago" text
+- [Fixtures](https://symfony.com/bundles/DoctrineFixturesBundle/current/index.html)(pour les fixtures) : `composer require --dev orm-fixtures`
+- [KnpPaginatorBundle]() (for the pagination)
+- [KnpTimeBundle]() (for the "3 minutes ago" text)
 
 We could cheat even more using 
 
