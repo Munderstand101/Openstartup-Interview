@@ -35,6 +35,13 @@ symfony server:stop
 
 ```
 
+## Configuration :
+Modifier la configuration du fichier `.env.local`, ce fichier contient la configuration du projet :
+```bash
+# Configurer l'accès à la base de données
+DATABASE_URL="mysql://root:@localhost:3306/dbname_dev?serverVersion=5.7"
+```
+
 ## Les Bundles utilisées :
 Pour ce projet, j'ai utilisé les bundles suivants :
 - [DoctrineFixturesBundle](https://symfony.com/bundles/DoctrineFixturesBundle/current/index.html ) (pour les fixtures) : `composer require --dev orm-fixtures`
