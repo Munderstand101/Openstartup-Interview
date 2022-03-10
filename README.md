@@ -3,7 +3,9 @@
 
 ## Présentation :
 ```
-OpenStartup Interview : est un site web de présentation des interviews réalisées pendant l'openstartup 2021 à bordeaux, il permet de créer et gérer les interview de startups.
+OpenStartup Interview : est un site web de présentation des interviews 
+réalisées pendant l'openstartup 2021 à bordeaux, il permet de créer et gérer 
+les interview de startups.
 ```
 
 
