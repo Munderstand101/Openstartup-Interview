@@ -55,8 +55,9 @@ Pour la partie gestion et administration :
 - [FOSUserBundle](https://github.com/FriendsOfSymfony/FOSUserBundle) to manage user login / registration
 - [SonataAdminBundle](https://github.com/sonata-project/SonataAdminBundle) to manage backend
 - [StofDoctrineExtensionsBundle](https://github.com/stof/StofDoctrineExtensionsBundle) to manage the "sluggable" behaviour
-
+<!--
 ## TODO
 - [x] Page d'accueil
 - [ ] Liste des entreprises
 - [ ] Détails des entreprises
+-->
