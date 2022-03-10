@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Interview index{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+
+    <section class="home-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card main text-center">
+                        <div class="card-header main">
+                            {{ include("Components/navbar.html.twig") }}
+                        </div>
+
+                        <div class="card-body">
+
+                            <h1>Interview index</h1>
+
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Nom</th>
+                                    <th>Interview</th>
+                                    <th>actions</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for interview in interviews %}
+{#                                    {{ dump(app.user) }}#}
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                        <tr>
+                                            <td>{{ interview.id }}</td>
+                                            <td>{{ interview.nom | u.truncate(30, '...') }}</td>
+                                            <td>{{ interview.interview | u.truncate(200, '...') }}</td>
+
+                                            {#                                        composer require twig/string-extra#}
+                                            {#                                        <td>{{ interview.nom | u.truncate(20, '...') }}</td>#}
+                                            {#                                        <td>{{ interview.interview | u.truncate(110, '...') }}</td>#}
+                                            <td>
+                                                <a href="{{ path('interview_show', {'id': interview.id}) }}">show</a>
+                                                <a href="{{ path('interview_edit', {'id': interview.id}) }}">edit</a>
+                                            </td>
+                                        </tr>
+                                    {% else %}
+                                        {% if app.user.groupes.id == interview.groupe.id %}
+                                            <tr>
+                                                <td>{{ interview.id }}</td>
+                                                <td>{{ interview.nom }}</td>
+                                                <td>{{ interview.interview }}</td>
+
+                                                {#                                        composer require twig/string-extra#}
+                                                {#                                        <td>{{ interview.nom | u.truncate(20, '...') }}</td>#}
+                                                {#                                        <td>{{ interview.interview | u.truncate(110, '...') }}</td>#}
+                                                <td>
+                                                    <a href="{{ path('interview_show', {'id': interview.id}) }}">show</a>
+                                                    <a href="{{ path('interview_edit', {'id': interview.id}) }}">edit</a>
+                                                </td>
+                                            </tr>
+                                        {% endif %}
+                                    {% endif %}
+
+                                {% else %}
+                                    <tr>
+                                        <td colspan="4">no records found</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+
+                            <a href="{{ path('interview_new') }}">Create new</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+{% endblock %}

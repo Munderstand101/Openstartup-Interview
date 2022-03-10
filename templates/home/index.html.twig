@@ -1,0 +1,134 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    <section class="home-section">
+        <div class="container">
+            <div class="row">
+
+
+                <div class="col-sm-12">
+                    <div class="card main text-center">
+                        <div class="card-header main">
+                            {{ include("Components/navbar.html.twig") }}
+                        </div>
+                        <div class="card-body">
+
+
+                            <h5 class="card-title">Liste des startups interviewées</h5>
+                            <p class="card-text">Startups dans le domaine de l'informatique ...</p>
+                            <a href="{{ path('intervievsent') }}" class="btn btn-primary">Afficher les interview de ces
+                                startups</a>
+                            <div class="section">
+
+                                <div class="row">
+                                    {% for entreprise in entreprises %}
+                                        <div class="logo-wrapper col-12 col-sm-3 col-md-3">
+                                            <a href="{{ entreprise.website }}" target="_blank">
+                                                <img src="{{ entreprise.logo }}">
+                                            </a>
+                                            <p class="card-text">{{ entreprise.interviews|length }}
+                                                Interview {{ entreprise.nom }}</p>
+                                        </div>
+                                        {# <tr> #}
+                                        {# <td>{{ entreprise.id }}</td> #}
+                                        {# <td>{{ entreprise.nom }}</td> #}
+                                        {# <td>{{ entreprise.logo }}</td> #}
+                                        {# <td>{{ entreprise.adresse }}</td> #}
+                                        {# <td>{{ entreprise.description }}</td> #}
+                                        {# <td>{{ entreprise.website }}</td> #}
+                                        {# <td>{{ entreprise.facebook }}</td> #}
+                                        {# <td>{{ entreprise.twitter }}</td> #}
+                                        {# <td>{{ entreprise.linkedin }}</td> #}
+                                        {# <td>{{ entreprise.openstartup }}</td> #}
+                                        {# <td> #}
+                                        {# <a href="{{ path('entreprise_show', {'id': entreprise.id}) }}">show</a> #}
+                                        {# <a href="{{ path('entreprise_edit', {'id': entreprise.id}) }}">edit</a> #}
+                                        {# </td> #}
+                                        {# </tr> #}
+                                        {# {% else %} #}
+                                        {# <tr> #}
+                                        {# <td colspan="11">no records found</td> #}
+                                        {# </tr> #}
+                                    {% endfor %}
+                                </div>
+
+
+                            </div>
+                            {#
+                            <p class="card-text">With supporting text below as a natural lead-in to additional
+                                content.</p>
+                            <div class="card-header main">
+                                <div class="hero featured-carousel owl-carousel">
+                                    <div class="item">
+                                        <div class="work">
+                                            <div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/slider-1.jpg);">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="work">
+                                            <div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/slider-2.jpg);">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="work">
+                                            <div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/slider-3.jpg);">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            #}
+
+                        </div>
+                    </div>
+                    <!--	<div class="card text-center">
+                      <div class="card-header">
+                        <ul class="nav nav-pills card-header-pills">
+                          <li class="nav-item">
+                            <a class="nav-link active" href="#">Active</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Disabled</a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                      </div>
+                    </div>
+                    <div class="card mb-3">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+          <img class="card-img-bottom" src="..." alt="Card image cap">
+        </div>
+                    --->
+                </div>
+            </div>
+    </section>
+{% endblock %}

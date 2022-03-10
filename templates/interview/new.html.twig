@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Interview{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+
+    <section class="home-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card main text-center">
+                        <div class="card-header main">
+                            {{ include("Components/navbar.html.twig") }}
+                        </div>
+
+                        <div class="card-body">
+
+                            <h1>Create new Interview</h1>
+
+                            {{ include('interview/_form.html.twig') }}
+
+                            <a href="{{ path('interview_index') }}">back to list</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+{% endblock %}

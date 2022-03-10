@@ -1,0 +1,145 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Entreprise{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    <section class="home-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card main">
+                        <div class="card-header main" id="headingOne2">
+                            <div class="logo-wrapper">
+                                <a href="{{ entreprise.website }}"
+                                   target="_blank">
+                                    <img src="{{ entreprise.logo }}">
+                                </a>
+                            </div>
+                            <h5 class="mb-0">
+
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne2" aria-expanded="false" aria-controls="collapseOne2">
+                                    G1 : Interview de FlitSport
+                                </button>
+                            </h5><div id="collapseOne2" class="collapse" aria-labelledby="headingOne2" data-parent="#accordion" style="">
+                                <div class="card-body">
+                                    <p></p>
+                                    <p><strong>Qu'est-ce que FlitSport ?</strong></p>
+                                    <p>FlitSport est une startup qui propose des entraînements sportifs via une application web.</p>
+                                    <p>Ces entraînements varient et dépendent des capacités de chaque utilisateur.</p>
+                                    <p><strong>Les outils utilisées</strong></p>
+                                    <p>FlitSport utilise différents outils pour mettre à bien leur service.</p>
+                                    <p>Par exemple, il est nécessaire au bon fonctionnement de l'application de récupérer des informations sur l'utilisateur afin d'adapter ses entraînements et c'est pour cela qu'ils utilisent par exemple des montres connectés (pour récupérer le rythme cardiaque) ou encore des tracker GPS pour savoir où l'utilisateur en est dans sa course.</p>
+                                    <p>Mais ils font aussi appel à des API pour faire ce dont ils ont besoin, ils utilisent par exemple l'API de Strava.</p>
+                                    <p><strong>Les technologies utilisées</strong></p>
+                                    <p>Pour l'application web FlitSport utilise le framework Angular (donc du JavaScript) mais utilise aussi le langage Python pour leur algorithme permettant de générer les programmes adaptés à chaque utilisateur. Cet algorithme est conteneurisé à l'aide de Docker.</p>
+                                    <p>Afin d'héberger leur service ils utilisent AWS.</p>
+
+                                </div>
+                            </div>
+                        </div><div class="card-header main" id="headingOne15">
+                            <h5 class="mb-0">
+
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne15" aria-expanded="false" aria-controls="collapseOne15">
+                                    G4 : Interview de FlitSport
+                                </button>
+                            </h5><div id="collapseOne15" class="collapse" aria-labelledby="headingOne15" data-parent="#accordion" style="">
+                                <div class="card-body">
+                                    <p>FlitSport</p>
+
+                                </div>
+                            </div>
+                        </div><div class="card-header main" id="headingOne26">
+                            <h5 class="mb-0">
+
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne26" aria-expanded="true" aria-controls="collapseOne26">
+                                    G7 : Interview de FlitSport
+                                </button>
+                            </h5><div id="collapseOne26" class="collapse" aria-labelledby="headingOne26" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p>FlitSport</p>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div></section>
+
+    {#
+    <section class="home-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card main text-center">
+                        <div class="card-header main">
+                            {{ include("Components/navbar.html.twig") }}
+                        </div>
+
+                        <div class="card-body">
+
+                            <h1>Entreprise</h1>
+
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <th>Id</th>
+                                    <td>{{ entreprise.id }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Nom</th>
+                                    <td>{{ entreprise.nom }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Logo</th>
+                                    <td>{{ entreprise.logo }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Adresse</th>
+                                    <td>{{ entreprise.adresse }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Description</th>
+                                    <td>{{ entreprise.description }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Website</th>
+                                    <td>{{ entreprise.website }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Facebook</th>
+                                    <td>{{ entreprise.facebook }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Twitter</th>
+                                    <td>{{ entreprise.twitter }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Linkedin</th>
+                                    <td>{{ entreprise.linkedin }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Openstartup</th>
+                                    <td>{{ entreprise.openstartup }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                            <a href="{{ path('entreprise_index') }}">back to list</a>
+
+                            <a href="{{ path('entreprise_edit', {'id': entreprise.id}) }}">edit</a>
+
+                            {{ include('entreprise/_delete_form.html.twig') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    #}
+
+{% endblock %}

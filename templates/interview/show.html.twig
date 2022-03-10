@@ -1,0 +1,103 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Interview{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+
+    <section class="home-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card main">
+                        <div class="card-header main">
+                            {{ include("Components/navbar.html.twig") }}
+                        </div>
+
+                        <div class="card-body">
+
+
+
+
+                            {# #}
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <a class="a1" href="{{ path('interview_index') }}">back to list</a>
+                                    </div>
+                                    <div class="col-md-6 text-center">
+                                        <a class="a1" href="{{ path('interview_edit', {'id': interview.id}) }}">edit</a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        {{ include('interview/_delete_form.html.twig') }}
+                                    </div>
+                                </div>
+                            {% else %}
+                                {% if app.user.groupes.id == interview.groupe.id %}
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <a class="a1" href="{{ path('interview_index') }}">back to list</a>
+                                        </div>
+                                        <div class="col-md-6 text-center">
+                                            <a class="a1" href="{{ path('interview_edit', {'id': interview.id}) }}">edit</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            {{ include('interview/_delete_form.html.twig') }}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+
+
+                            <div>
+                                <div class="text-center">
+                                    <img src="{{ interview.entreprise.logo }}" alt="" class="img-fluid mb-4">
+                                    <h1>{{ interview.nom  }}</h1>
+                                    <ul class="list-inline mb-3">
+                                        <li class="list-inline-item">
+                                            {{ interview.dateInterview|format_datetime('full', 'none', locale='fr') }}
+                                        </li>
+
+                                        <li class="list-inline-item">
+                                            <span class="eta">{{ interview.groupe.nom }} [
+                                            {% for user in interview.groupe.users %}
+                                                {{ user.nom }}{% if not loop.last %},{% endif %}
+                                            {% endfor %} ]
+                                            </span>
+                                        </li>
+                                    </ul>
+                                    <ul class="btn-link-group list-inline">
+                                        <li class="list-inline-item"><a class="a1" href="{{ interview.entreprise.website }}">Site Web</a></li>
+                                        <li class="list-inline-item"><a class="a1" href="{{ interview.entreprise.openstartup }}">Page Openstartup</a></li>
+                                    </ul>
+
+                                </div>
+
+                                {{ interview.interview|markdown_to_html|sanitize_html  }}
+
+                            </div>
+
+                                {#
+                                <div class="card">
+                                    <div class="card-header main">
+                                        <div class="logo-wrapper">
+                                            <a href="{{ interview.entreprise.website }}"
+                                               target="_blank">
+                                                <img src="{{ interview.entreprise.logo }}">
+                                            </a>
+                                        </div>
+                                        <h1>      {{ interview.nom  }}</h1>
+                                    </div>
+                                        <div class="card-body">
+                                            {{ interview.interview|markdown_to_html|sanitize_html  }}
+
+                                        </div>
+                                </div>
+                                #}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+{% endblock %}

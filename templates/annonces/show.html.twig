@@ -1,0 +1,126 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello GalerieController!{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    <section class="home-section">
+        <div class="container">
+            <div class="row">
+
+
+
+                <div class="col-sm-12">
+                    <div class="card main text-center">
+                        <div class="card-header main">
+                            {{ include("Components/navbar.html.twig") }}
+                        </div>
+                        <div class="card-body">
+
+
+                            {#
+                            <iframe class="mbr-embedded-video"
+                                             src="https://www.youtube.com/embed/f9yZ0WHaFUI?rel=0&amp;amp;showinfo=0&amp;autoplay=0&amp;loop=0"
+                                             width="718" height="704" frameborder="0" allowfullscreen="" style="height: 499.5px;">
+                            </iframe>
+
+                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6871179808974393344" height="708" width="504" frameborder="0" allowfullscreen="" title="Post intégré">
+                            </iframe>
+                            #}
+
+                            <h5 class="card-title">{{ annonce.title }}</h5>
+                            <p class="card-text">{{ annonce.content|markdown_to_html|sanitize_html }}</p>
+                            <div class="card-header main">
+                                <div class="hero featured-carousel owl-carousel">
+                                    {% for image in annonce.images %}
+                                        <div class="item">
+                                            <div class="work">
+                                                <div class="img d-flex align-items-center justify-content-stretch"
+                                                     style="background-image: url({{ asset('/uploads/' ~ image.name) }}); background-size: contain;">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                   {#
+                                    <div class="item">
+                                        <div class="work">
+                                            <div class="img d-flex align-items-center justify-content-stretch" style="background-image: url(images/CitéDuNumérique/IMG_4284.jpg);">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="work">
+                                            <div class="img d-flex align-items-center justify-content-stretch" style="background-image: url(images/CitéDuNumérique/IMG_4285.jpg);">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="work">
+                                            <div class="img d-flex align-items-center justify-content-stretch" style="background-image: url(images/CitéDuNumérique/IMG_4288.jpg);">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="work">
+                                            <div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/CitéDuNumérique/IMG_4292.jpg);">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                   #}
+
+                                </div>
+                            </div>
+
+{#                            <a href="#" class="btn btn-primary">Go somewhere</a>#}
+
+
+                        </div>
+                    </div>
+                    <!--	<div class="card text-center">
+                      <div class="card-header">
+                        <ul class="nav nav-pills card-header-pills">
+                          <li class="nav-item">
+                            <a class="nav-link active" href="#">Active</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Disabled</a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                      </div>
+                    </div>
+                    <div class="card mb-3">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+          <img class="card-img-bottom" src="..." alt="Card image cap">
+        </div>
+                    --->
+                </div>
+            </div>
+    </section>
+{% endblock %}
+
+

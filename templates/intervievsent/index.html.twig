@@ -1,0 +1,396 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello IntervievsentController!{% endblock %}
+
+{# {% block stylesheets %} #}
+{# {{ parent() }} #}
+{# {% endblock %} #}
+
+{% block body %}
+    {{ parent() }}
+
+    <section class="home-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card main">
+                        <div class="card-header main">
+                            {{ include("Components/navbar.html.twig") }}
+                        </div>
+
+                        <div class="card-body">
+
+                            <!-- Wrapper for Cards -->
+                            <div class="row mx-n2">
+                                {#
+                                <div class="col-sm-6 col-md-4 px-2 mb-3 mb-md-0">
+
+                                    <!-- Card 1 -->
+                                    <a class="card h-100 transition-3d-hover" href="#">
+                                        <img class="card-img-top" src="../../assets/img/480x220/monthly.gif" alt="Monthly Animation">
+                                        <div class="card-body">
+                                            <h4>Monthly</h4>
+                                            <p class="font-size-1 text-body mb-0">You will be charged every month the amount of</p>
+                                            <h3 class="text-center font-weight-bold text-black-50 mb-0 mt-4">USD 43</h3>
+                                        </div>
+                                        <hr/>
+                                        <!-- Collapsing Footer -->
+                                        <div class="card-footer border-0 pt-0">
+                                            <span class="font-size-1 text-black-50">Show payment schedule</span>
+                                            <div class="row pt-2">
+                                                <div class="col">
+                                                    <span class="today font-size-1 text-black-50" data-toggle="tooltip" data-html="true" id="today">Today</span>
+                                                </div>
+                                                <div class="col">
+                                                    <span class="font-size-1 text-black-50">USD 43</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <span class="font-size-1 text-black-50" data-toggle="tooltip" data-html="true" title="placeholder">June 2020</span>
+                                                </div>
+                                                <div class="col">
+                                                    <span class="font-size-1 text-black-50">USD 43</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <span class="font-size-1 text-black-50" data-toggle="tooltip" data-html="true" title="placeholder">July 2020</span>
+                                                </div>
+                                                <div class="col">
+                                                    <span class="font-size-1 text-black-50">USD 43</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Collapsing Footer -->
+                                    </a>
+                                    <!-- End Card 1 -->
+
+                                </div>
+                                <div class="col-sm-6 col-md-4 px-2 mb-3 mb-md-0">
+
+                                    <!-- Card 2 -->
+                                    <a class="card h-100 transition-3d-hover" href="#">
+                                        <img class="card-img-top" src="../../assets/img/480x220/quarterly.gif" alt="Quarterly Animation">
+                                        <div class="card-body">
+                                            <h4>Quarterly</h4>
+                                            <p class="font-size-1 text-body mb-0">You will be charged every third month the amount of</p>
+                                            <h3 class="text-center font-weight-bold text-black-50 mb-0 mt-4">USD 102</h3>
+                                        </div>
+                                        <hr/>
+                                        <!-- Collapsing Footer -->
+                                        <div class="card-footer border-0 pt-0">
+                                            <span class="font-size-1 text-black-50 ">Show payment schedule</span>
+                                            <div class="row pt-2">
+                                                <div class="col">
+                                                    <span class="today font-size-1 text-black-50" data-toggle="tooltip" data-html="true" id="today">Today</span>
+                                                </div>
+                                                <div class="col">
+                                                    <span class="font-size-1 text-black-50">USD 102</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col">
+                                                    <span class="font-size-1 text-black-50" data-toggle="tooltip" data-html="true" title="placeholder">July 2020</span>
+                                                </div>
+                                                <div class="col">
+                                                    <span class="font-size-1 text-black-50">July 2020</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <span class="font-size-1 text-black-50" data-toggle="tooltip" data-html="true" title="placeholder">July 2020</span>
+                                                </div>
+                                                <div class="col">
+                                                    <span class="font-size-1 text-black-50">USD 43</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Collapsing Footer -->
+                                    </a>
+                                    <!-- End Card 2 -->
+                                </div>
+                                <div class="col-sm-6 col-md-4 px-2 mb-3 mb-md-0">
+                                    <!-- End Card 3 -->
+                                    <a class="card h-100 transition-3d-hover" href="#">
+                                        <img class="card-img-top" src="../../assets/img/480x220/yearly.gif" alt="Yearly Animation">
+                                        <div class="card-body">
+                                            <h4>Annually</h4>
+                                            <p class="font-size-1 text-body mb-0">You will be charged once every year the amount of</p>
+                                            <h3 class="text-center font-weight-bold text-black-50 mb-0 mt-4">USD 408</h3>
+                                        </div>
+                                        <hr/>
+                                        <!-- Collapsing Footer -->
+                                        <div class="card-footer border-0 pt-0">
+                                            <span class="font-size-1 text-black-50">Show payment schedule</span>
+                                            <div class="row pt-2">
+                                                <div class="col">
+                                                    <span class="today font-size-1 text-black-50" data-toggle="tooltip" data-html="true" id="today">Today</span> </div>
+                                                <div class="col">
+                                                    <span class="font-size-1 text-black-50">USD 408</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <span class="font-size-1 text-black-50" data-toggle="tooltip" data-html="true" title="placeholder">April 2021</span>
+                                                </div>
+                                                <div class="col">
+                                                    <span class="font-size-1 text-black-50">USD 408</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <span class="font-size-1 text-black-50" data-toggle="tooltip" data-html="true" title="placeholder">April 2022</span>
+                                                </div>
+                                                <div class="col">
+                                                    <span class="font-size-1 text-black-50">USD 408</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Collapsing Footer -->
+                                    </a>
+                                    <!-- End Card 3 -->
+                                </div>
+                                #}
+
+
+                                {% for entreprise in entreprises %}
+                                    {# https://stackoverflow.com/questions/61311111/add-a-collapsing-footer-in-a-card-bootstrap #}
+                                    <div class="col-sm-6 col-md-4 px-2 mb-3 mb-md-0">
+                                        <!-- End Card 3 -->
+                                        <div class="card h-100 transition-3d-hover" href="#">
+                                            <div class="logo-wrapper">
+                                                <a href="{{ entreprise.website }}"
+                                                   target="_blank">
+                                                    <img src="{{ entreprise.logo }}">
+                                                </a>
+                                            </div>
+                                            {# <img class="card-img-top"  href="{{ entreprise.website }}"src="{{ entreprise.logo }}" alt="{{ entreprise.website }}"> #}
+                                            <div class="card-body">
+                                                <h4>{{ entreprise.nom }}</h4>
+                                                <p class="change_text font-size-1 text-body mb-0">{{ entreprise.description | u.truncate(110, '...') }}</p>
+                                                {# <h3 class="text-center font-weight-bold text-black-50 mb-0 mt-4">USD 408</h3> #}
+                                            </div>
+                                            <hr/>
+                                            <!-- Collapsing Footer -->
+                                            <div class="card-footer border-0 pt-0">
+{#                                                <a class="change_text font-size-1 text-black-50" data-toggle="collapse"#}
+{#                                                   href="#collapseExample" role="button" aria-expanded="true"#}
+{#                                                   aria-controls="collapseExample">#}
+
+                                                    <a class="change_text font-size-1 text-black-50" data-toggle="collapse"
+                                                        role="button" >
+
+
+
+                                                    {{ entreprise.interviews|length }} interview
+
+                                                </a>
+                                                <div class="collapse show">
+                                                    <div class="row pt-2">
+                                                        {% for interview in interviews %}
+                                                            {% if entreprise.id == interview.entreprise.id %}
+                                                                <h5 class="mb-0">
+
+                                                                    <a class="btn btn-link" href="{{ path('interview_show', {'id': interview.id}) }}">
+                                                                        {{ interview.nom }}
+                                                                    </a>
+                                                                </h5>
+
+                                                                {#
+                                                                <div id="accordion">
+                                                                    <div class="card">
+                                                                        <div class="card-header" id="headingOne{{ interview.id }}">
+                                                                            <h5 class="mb-0">
+
+                                                                                <button class="btn btn-link" data-toggle="collapse"
+                                                                                        data-target="#collapseOne{{ interview.id }}"
+                                                                                        aria-expanded="true"
+                                                                                        aria-controls="collapseOne{{ interview.id }}">
+                                                                                    {{ interview.nom }}
+                                                                                </button>
+                                                                            </h5>
+                                                                        </div>
+
+                                                                        <div id="collapseOne{{ interview.id }}" class="collapse"
+                                                                             aria-labelledby="headingOne{{ interview.id }}"
+                                                                             data-parent="#accordion">
+                                                                            <div class="card-body">
+                                                                                {{ interview.interview|markdown_to_html|sanitize_html }}
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                                #}
+                                                            {% endif %}
+
+                                                        {% endfor %}
+
+
+
+                                                        {# <h5 class="mb-0"> #}
+
+                                                        {# <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne2" aria-expanded="false" aria-controls="collapseOne2"> #}
+                                                        {# G2 : Interview de FlitSport #}
+                                                        {# </button> #}
+                                                        {# </h5> #}
+                                                        {# <h5 class="mb-0"> #}
+
+                                                        {# <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne2" aria-expanded="false" aria-controls="collapseOne2"> #}
+                                                        {# G1 : Interview de FlitSport #}
+                                                        {# </button> #}
+                                                        {# </h5><h5 class="mb-0"> #}
+
+                                                        {# <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne2" aria-expanded="false" aria-controls="collapseOne2"> #}
+                                                        {# G1 : Interview de FlitSport #}
+                                                        {# </button> #}
+                                                        {# </h5> #}
+
+
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+
+                                            {#
+                                            <div class="card-footer border-0 pt-0">
+                                                <a class="change_text font-size-1 text-black-50" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Show payment schedule</a>
+                                                <div class="collapse show" id="collapseExample">
+                                                    <div class="row pt-2">
+                                                        <div class="col">
+                                                            <span class="today font-size-1 text-black-50" data-toggle="tooltip" data-html="true" id="today">Today</span> </div>
+                                                        <div class="col">
+                                                            <span class="font-size-1 text-black-50">USD 408</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <span class="font-size-1 text-black-50" data-toggle="tooltip" data-html="true" title="placeholder">April 2021</span>
+                                                        </div>
+                                                        <div class="col">
+                                                            <span class="font-size-1 text-black-50">USD 408</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <span class="font-size-1 text-black-50" data-toggle="tooltip" data-html="true" title="placeholder">April 2022</span>
+                                                        </div>
+                                                        <div class="col">
+                                                            <span class="font-size-1 text-black-50">USD 408</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            #}
+                                            <!-- End Collapsing Footer -->
+                                        </div>
+                                        <!-- End Card 3 -->
+                                    </div>
+
+                                {% endfor %}
+
+                            </div>
+                            <!-- End Wrapper for Cards -->
+
+
+                            {% for entreprise in entreprises %}
+                                {# <strong>{{ entreprise.nom }}</strong> <br><br> #}
+                                <div class="logo-wrapper">
+                                    <a href="{{ entreprise.website }}"
+                                       target="_blank">
+                                        <img src="{{ entreprise.logo }}">
+                                    </a>
+                                </div>
+                                {% for interview in interviews %}
+                                    {% if entreprise.id == interview.entreprise.id %}
+                                        <div id="accordion">
+                                            <div class="card">
+                                                <div class="card-header" id="headingOne{{ interview.id }}">
+                                                    <h5 class="mb-0">
+
+                                                        <button class="btn btn-link" data-toggle="collapse"
+                                                                data-target="#collapseOne{{ interview.id }}"
+                                                                aria-expanded="true"
+                                                                aria-controls="collapseOne{{ interview.id }}">
+                                                            {{ interview.nom }}
+                                                        </button>
+                                                    </h5>
+                                                </div>
+
+                                                <div id="collapseOne{{ interview.id }}" class="collapse"
+                                                     aria-labelledby="headingOne{{ interview.id }}"
+                                                     data-parent="#accordion">
+                                                    <div class="card-body">
+                                                        {{ interview.interview|markdown_to_html|sanitize_html }}
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    {% endif %}
+
+                                {% endfor %}
+                            {% endfor %}
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+    {# {% for entreprise in entreprises %}
+          <strong>{{ entreprise.nom}}</strong> <br><br>
+            {% for interview in interviews %}
+                {% if entreprise.id == interview.entreprise.id %}
+                    - {{ interview.nom }}<br>
+                {% endif %}
+
+            {% endfor %}
+    {% endfor %} #}
+
+    {# {{ interview.entreprise.nom }} #}
+    {# {{ dump(interview.entreprise) }} #}
+
+    {# {% for disponibilite in entreprise.propose %} #}
+    {# <td>{{ disponibilite.dateDispo|date('H:i') }}</td> #}
+    {# {% endfor %} #}
+
+
+
+
+    {# {% for entreprise in entreprises %} #}
+    {# {{ entreprise.nom}}<br> #}
+    {# {% for disponibilite in entreprise.propose %} #}
+    {# <td>{{ disponibilite.dateDispo|date('H:i') }}</td> #}
+    {# {% endfor %} #}
+    {# {% endfor %} #}
+
+
+{% endblock %}
+
+{% block javascript %}
+
+{{ parent() }}
+<script>
+document.querySelectorAll('.change_text').forEach(cur => {
+cur.addEventListener('click', e => {
+    const target = e.target;
+    if (target.textContent === 'Show payment schedule') {
+        target.textContent = 'Hide payment schedule';
+    } else {
+        target.textContent = 'Show payment schedule';
+    }
+})
+});
+</script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+{% endblock %}
+

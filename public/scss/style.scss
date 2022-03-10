@@ -1,0 +1,88 @@
+@import 'bootstrap/bootstrap';
+@import 'bootstrap/variables';
+@import 'bootstrap/mixins';
+
+$font-primary: 'Poppins',Arial, sans-serif;
+$primary: #ff5959;
+//sections
+.heading-section {
+	padding: 3em 0;
+}
+.home-section {
+}
+
+/*card*/
+.card {
+	border-radius: 2em;
+}
+
+.card-header {
+	padding: 0.75rem 1.25rem;
+	margin-bottom: 0;
+	background-color: rgba(0,0,0,0);
+	border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+//owl carousel
+.owl-carousel {
+	position: relative;
+	.owl-item {
+		opacity: 1;
+		&.active {
+			opacity: 1;
+		}
+	}
+
+	.owl-nav {
+		position: absolute;
+		top: 50%;
+		width: 100%;
+		.owl-prev,
+		.owl-next {
+			position: absolute;
+			transform: translateY(-50%);
+			margin-top: 0;
+			color: rgba(255,255,255,1) !important;
+			@include transition(.7s);
+			span {
+				&:before {
+					font-size: 30px;
+				}
+			}
+			opacity: 1;
+		}
+		.owl-prev {
+			left: 20px;
+		}
+		.owl-next {
+			right: 20px;
+		}
+	}
+	.owl-dots {
+		text-align: center;
+		margin-top: 0;
+		position: absolute;
+		bottom: 20px;
+		right: 0;
+		left: 0;
+		.owl-dot {
+			width: 10px;
+			height: 10px;
+			margin: 5px;
+			border-radius: 50%;
+			background: rgba(255,255,255,.5);
+			position: relative;
+			&:hover, &:focus{
+				outline: none !important;
+			}
+			&.active {
+				background: $primary;
+			}
+		}
+	}
+}
+
+.owl-carousel.owl-drag .owl-item {
+	-ms-touch-action: pan-y;
+	touch-action: pan-y;
+}

@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Annonces index{% endblock %}
+
+{% block body %}
+{{ parent() }}
+
+<section class="home-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card main">
+                    <div class="card-header main">
+                        {{ include("Components/navbar.html.twig") }}
+                    </div>
+
+                    <div class="card-body">
+    <h1>Ensemble d'images index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for ensemble in ensembles %}
+            <tr>
+                <td>{{ ensemble.id }}</td>
+                <td>{{ ensemble.title }}</td>
+                <td>{{ ensemble.content }}</td>
+                <td>
+                    <a href="{{ path('annonces_show', {'id': ensemble.id}) }}">show</a>
+                    <a href="{{ path('annonces_edit', {'id': ensemble.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('annonces_new') }}">Create new</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+</section>
+
+{% endblock %}
